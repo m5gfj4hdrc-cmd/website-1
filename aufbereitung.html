@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fahrzeugaufbereitung – Autoservice H. Petrov</title>
+
+<style>
+body{font-family:Arial;margin:0;line-height:1.6}
+header,footer{background:#1f1f1f;color:#fff;padding:1rem 2rem}
+section{max-width:1000px;margin:auto;padding:3rem 2rem}
+.hero-box{background:linear-gradient(135deg, #1f1f1f 0%, #3f3f3f 100%);color:#fff;padding:2.5rem;border-radius:8px;margin:2rem 0;text-align:center}
+.packages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:3rem 0}
+.package{background:#fff;border:3px solid #f5f5f5;border-radius:8px;padding:2rem;transition:0.3s;position:relative;overflow:hidden}
+.package:hover{border-color:#c62828;transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}
+.package-header{text-align:center;margin-bottom:1.5rem}
+.package-title{color:#c62828;font-size:1.4rem;margin-bottom:0.3rem}
+.package-price{font-size:1.8rem;font-weight:bold;color:#1f1f1f}
+.package-price-note{font-size:0.85rem;color:#666}
+.package ul{list-style:none;padding:0}
+.package li{padding:0.5rem 0;border-bottom:1px solid #f0f0f0;position:relative;padding-left:1.5rem}
+.package li:before{content:"✓";color:#4caf50;position:absolute;left:0;font-weight:bold}
+.package li:last-child{border-bottom:none}
+.popular{border-color:#c62828}
+.popular:before{content:"BELIEBT";position:absolute;top:15px;right:-30px;background:#c62828;color:#fff;padding:0.3rem 2.5rem;transform:rotate(45deg);font-size:0.75rem;font-weight:bold}
+.services-detail{margin:3rem 0}
+.service-item{background:#f5f5f5;padding:1.5rem;border-radius:6px;margin:1.5rem 0}
+.service-item h4{color:#c62828;margin-bottom:0.5rem}
+a.btn{background:#c62828;color:#fff;padding:0.9rem 1.8rem;border-radius:4px;display:inline-block;margin-top:1rem;transition:0.2s;text-align:center}
+a.btn:hover{background:#a02020}
+.info-box{background:#e3f2fd;border-left:4px solid #2196f3;padding:1.5rem;margin:2rem 0}
+</style>
+</head>
+
+<body>
+<header>
+  <a href="index.html" style="color:#fff">← Zurück zur Startseite</a>
+</header>
+
+<section>
+<h1>Professionelle Fahrzeugaufbereitung</h1>
+<p>Wir bringen Ihr Fahrzeug zum Glänzen – innen und außen. Von der einfachen Handwäsche bis zur kompletten Aufbereitung.</p>
+
+<div class="hero-box">
+  <h2 style="margin-bottom:0.5rem">✨ Wie neu – von Profis aufbereitet!</h2>
+  <p>Steigern Sie den Wert und die Freude an Ihrem Fahrzeug durch professionelle Pflege und Aufbereitung.</p>
+</div>
+
+<h2 style="text-align:center;margin-top:3rem">Unsere Aufbereitungs-Pakete</h2>
+<div class="packages-grid">
+  <div class="package">
+    <div class="package-header">
+      <h3 class="package-title">Basis</h3>
+      <div class="package-price">ab 49€</div>
+      <div class="package-price-note">PKW bis Mittelklasse</div>
+    </div>
+    <ul>
+      <li>Außenwäsche per Hand</li>
+      <li>Felgenreinigung</li>
+      <li>Scheiben innen & außen</li>
+      <li>Staubsaugen Innenraum</li>
+      <li>Türeinstiege reinigen</li>
+      <li>Kunststoffpflege außen</li>
+    </ul>
+    <a href="kontakt.html" class="btn" style="width:100%;margin-top:1.5rem">Termin buchen</a>
+  </div>
+
+  <div class="package popular">
+    <div class="package-header">
+      <h3 class="package-title">Komfort</h3>
+      <div class="package-price">ab 129€</div>
+      <div class="package-price-note">PKW bis Mittelklasse</div>
+    </div>
+    <ul>
+      <li>Alles aus "Basis"</li>
+      <li>Polsterreinigung</li>
+      <li>Cockpit-Tiefenreinigung</li>
+      <li>Kunststoffpflege innen</li>
+      <li>Kofferraum reinigen</li>
+      <li>Motorwäsche</li>
+      <li>Gummipflege Türdichtungen</li>
+      <li>Versiegelung Lack (6 Monate)</li>
+    </ul>
+    <a href="kontakt.html" class="btn" style="width:100%;margin-top:1.5rem">Termin buchen</a>
+  </div>
+
+  <div class="package">
+    <div class="package-header">
+      <h3 class="package-title">Premium</h3>
+      <div class="package-price">ab 249€</div>
+      <div class="package-price-note">PKW bis Mittelklasse</div>
+    </div>
+    <ul>
+      <li>Alles aus "Komfort"</li>
+      <li>Lackpolitur & Kratzerentfernung</li>
+      <li>Keramikversiegelung (2 Jahre)</li>
+      <li>Scheinwerfer polieren</li>
+      <li>Leder-/Sitzpflege intensiv</li>
+      <li>Geruchsbeseitigung (Ozon)</li>
+      <li>Motorraum-Detailing</li>
+      <li>Chrom polieren</li>
+    </ul>
+    <a href="kontakt.html" class="btn" style="width:100%;margin-top:1.5rem">Termin buchen</a>
+  </div>
+</div>
+
+<div class="info-box">
+  <strong>💡 Hinweis:</strong> Die Preise verstehen sich für PKW bis zur Mittelklasse (z.B. VW Golf, Audi A4). Für größere Fahrzeuge (SUV, Vans, Transporter) berechnen wir einen Aufschlag. Gerne erstellen wir Ihnen ein individuelles Angebot!
+</div>
+
+<h2>Einzelleistungen & Zusatzservices</h2>
+<div class="services-detail">
+  <div class="service-item">
+    <h4>Polsterreinigung & Lederaufbereitung</h4>
+    <p>Tiefenreinigung der Sitze, Entfernung von Flecken und Gerüchen. Ledersitze werden gereinigt, gepflegt und imprägniert.</p>
+    <p style="margin-top:0.5rem"><strong>Preis:</strong> ab 80€</p>
+  </div>
+
+  <div class="service-item">
+    <h4>Lackpolitur & Kratzerentfernung</h4>
+    <p>Entfernung von leichten Kratzern, Hologrammen und Oxidation. Der Lack erhält seinen ursprünglichen Glanz zurück.</p>
+    <p style="margin-top:0.5rem"><strong>Preis:</strong> ab 150€</p>
+  </div>
+
+  <div class="service-item">
+    <h4>Keramikversiegelung</h4>
+    <p>Langanhaltender Schutz für Ihren Lack. Wasser perlt ab (Lotuseffekt), UV-Schutz, leichtere Reinigung. Haltbarkeit: bis zu 2 Jahre.</p>
+    <p style="margin-top:0.5rem"><strong>Preis:</strong> ab 299€</p>
+  </div>
+
+  <div class="service-item">
+    <h4>Scheinwerfer-Aufbereitung</h4>
+    <p>Polieren vergilbter und matter Scheinwerfer für bessere Sicht und Optik. Inklusive UV-Schutz-Versiegelung.</p>
+    <p style="margin-top:0.5rem"><strong>Preis:</strong> ab 60€</p>
+  </div>
+
+  <div class="service-item">
+    <h4>Geruchsbeseitigung (Ozon-Behandlung)</h4>
+    <p>Entfernung hartnäckiger Gerüche (Rauch, Haustiere, Feuchtigkeit) durch professionelle Ozon-Behandlung.</p>
+    <p style="margin-top:0.5rem"><strong>Preis:</strong> ab 80€</p>
+  </div>
+
+  <div class="service-item">
+    <h4>Motorwäsche & Motorraum-Reinigung</h4>
+    <p>Professionelle Reinigung des Motorraums mit speziellen Reinigern und Konservierung.</p>
+    <p style="margin-top:0.5rem"><strong>Preis:</strong> ab 40€</p>
+  </div>
+
+  <div class="service-item">
+    <h4>Unterbodenwäsche & Konservierung</h4>
+    <p>Entfernung von Salz und Schmutz. Optional: Unterboden-Konservierung gegen Rost.</p>
+    <p style="margin-top:0.5rem"><strong>Preis:</strong> ab 50€</p>
+  </div>
+</div>
+
+<h2>Warum professionelle Aufbereitung?</h2>
+<ul style="line-height:2">
+  <li><strong>Werterhalt:</strong> Ein gepflegtes Fahrzeug erzielt beim Verkauf deutlich höhere Preise</li>
+  <li><strong>Gesundheit:</strong> Sauberer Innenraum bedeutet bessere Luftqualität</li>
+  <li><strong>Langlebigkeit:</strong> Lackversiegelung schützt vor Umwelteinflüssen</li>
+  <li><strong>Optik:</strong> Ihr Auto sieht aus wie neu und macht wieder Freude</li>
+  <li><strong>Zeit sparen:</strong> Profis arbeiten gründlicher und schneller</li>
+</ul>
+
+<h2>Besonders empfohlen für:</h2>
+<ul style="line-height:2">
+  <li>🚗 Fahrzeugverkauf – Maximieren Sie den Verkaufspreis</li>
+  <li>🎁 Geschenk – Überraschen Sie jemanden mit einer Aufbereitung</li>
+  <li>🌸 Frühjahrsputz – Nach dem Winter das Auto auf Vordermann bringen</li>
+  <li>🍂 Wintervorbereitung – Schutz vor Salz und Witterung</li>
+  <li>👶 Familienfahrzeug – Gründliche Reinigung für ein gesundes Fahrzeugklima</li>
+</ul>
+
+<div class="info-box">
+  <h3 style="margin-top:0">⏰ Bearbeitungszeit</h3>
+  <ul style="margin-top:1rem">
+    <li><strong>Basis-Paket:</strong> ca. 2-3 Stunden</li>
+    <li><strong>Komfort-Paket:</strong> ca. 4-6 Stunden</li>
+    <li><strong>Premium-Paket:</strong> 1-2 Tage (nach Vereinbarung)</li>
+  </ul>
+  <p style="margin-top:1rem">Bei Bedarf stellen wir Ihnen für die Dauer der Aufbereitung ein Ersatzfahrzeug zur Verfügung (nach Verfügbarkeit).</p>
+</div>
+
+<a href="kontakt.html" class="btn">Jetzt Aufbereitungs-Termin vereinbaren</a>
+</section>
+
+<footer>
+  <p>© 2026 Autoservice H. Petrov | <a href="index.html" style="color:#fff">Startseite</a></p>
+</footer>
+</body>
+</html>
