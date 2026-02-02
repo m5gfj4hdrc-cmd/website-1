@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über uns – Autoservice H. Petrov</title>
+
+  <style>
+    :root {
+      --dark:#1f1f1f;
+      --light:#ffffff;
+      --accent:#c62828;
+      --gray:#f5f5f5;
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial, Helvetica, sans-serif; line-height:1.6; }
+
+    a { text-decoration:none; color:inherit; }
+
+    header {
+      background:var(--dark);
+      color:#fff;
+      padding:1rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size:1.3rem;
+      font-weight:bold;
+      display:flex;
+      align-items:center;
+      gap:0.8rem;
+      cursor:pointer;
+      transition:opacity 0.2s;
+    }
+
+    .logo:hover {
+      opacity:0.8;
+    }
+
+    .logo img {
+      height:50px;
+      width:auto;
+    }
+
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:1.5rem;
+    }
+
+    nav li { position:relative; }
+
+    nav a { 
+      color:#fff; 
+      font-weight:500;
+      transition:color 0.2s;
+      cursor:pointer;
+    }
+
+    nav a:hover {
+      color:var(--accent);
+    }
+
+    nav li ul {
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      background:#333;
+      min-width:220px;
+      border-radius:4px;
+      box-shadow:0 4px 6px rgba(0,0,0,0.3);
+      padding:0.5rem 0;
+      z-index:100;
+    }
+
+    nav li:hover > ul { 
+      display:block; 
+    }
+
+    nav li ul li {
+      display:block;
+    }
+
+    nav li ul li a {
+      display:block;
+      padding:0.7rem 1rem;
+      white-space:nowrap;
+    }
+
+    nav li ul li a:hover {
+      background:#444;
+      color:var(--accent);
+    }
+
+    .page-header {
+      background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+      url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=80');
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+      padding:5rem 2rem;
+      text-align:center;
+    }
+
+    .page-header h1 {
+      font-size:2.5rem;
+      margin-bottom:1rem;
+    }
+
+    section {
+      max-width:1100px;
+      margin:auto;
+      padding:4rem 2rem;
+    }
+
+    section h2 {
+      margin-bottom:2rem;
+      font-size:2rem;
+      color:var(--dark);
+    }
+
+    .about-content {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:3rem;
+      margin-bottom:3rem;
+    }
+
+    .about-text p {
+      margin-bottom:1rem;
+      line-height:1.8;
+    }
+
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:1rem;
+      margin:3rem 0;
+    }
+
+    .gallery img {
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      border-radius:6px;
+      transition:transform 0.3s;
+      cursor:pointer;
+    }
+
+    .gallery img:hover {
+      transform:scale(1.05);
+    }
+
+    .map-container {
+      margin:3rem 0;
+    }
+
+    .map-container h3 {
+      margin-bottom:1.5rem;
+      font-size:1.5rem;
+      color:var(--dark);
+    }
+
+    .map-container iframe {
+      width:100%;
+      height:450px;
+      border:none;
+      border-radius:6px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .team-section {
+      background:var(--gray);
+      padding:4rem 2rem;
+    }
+
+    .team-content {
+      max-width:1100px;
+      margin:auto;
+    }
+
+    .team-content h2 {
+      text-align:center;
+      margin-bottom:2rem;
+    }
+
+    .team-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:2rem;
+    }
+
+    .team-member {
+      background:#fff;
+      padding:2rem;
+      border-radius:6px;
+      text-align:center;
+    }
+
+    .team-member h3 {
+      color:var(--accent);
+      margin-bottom:0.5rem;
+    }
+
+    footer {
+      background:#1f1f1f;
+      color:#fff;
+      text-align:center;
+      padding:2rem;
+    }
+
+    footer a {
+      color:#fff;
+      margin:0 0.5rem;
+    }
+
+    footer a:hover {
+      color:var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns:1fr;
+      }
+
+      .gallery {
+        grid-template-columns:1fr;
+      }
+
+      header {
+        flex-direction:column;
+        gap:1rem;
+      }
+
+      nav ul {
+        flex-direction:column;
+        gap:0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="logoautoservice.png" alt="Autoservice H. Petrov Logo">
+    <span>Autoservice H. Petrov</span>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="index.html">Startseite</a></li>
+
+      <li>
+        <a href="#">Leistungen</a>
+        <ul>
+          <li><a href="werkstatt.html">Werkstatt</a></li>
+          <li><a href="tuning.html">Tuning</a></li>
+          <li><a href="lackierung.html">Lackiererei</a></li>
+          <li><a href="aufbereitung.html">Fahrzeugaufbereitung</a></li>
+        </ul>
+      </li>
+
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-header">
+  <h1>Über uns</h1>
+  <p>Ihr zuverlässiger Partner für alle KFZ-Angelegenheiten in Gelnhausen</p>
+</section>
+
+<section>
+  <div class="about-content">
+    <div class="about-text">
+      <h2>Willkommen bei Autoservice H. Petrov</h2>
+      <p>Seit vielen Jahren ist Autoservice H. Petrov Ihr verlässlicher Partner für alle Arbeiten rund um Ihr Fahrzeug in Gelnhausen und Umgebung. Mit Leidenschaft, Fachwissen und modernster Technik kümmern wir uns um Ihr Auto – ob Inspektion, Reparatur, Tuning oder Lackierung.</p>
+      
+      <p>Unser Team besteht aus qualifizierten KFZ-Mechatronikern, die sich regelmäßig weiterbilden, um Ihnen stets den besten Service zu bieten. Dabei legen wir großen Wert auf Transparenz, faire Preise und Kundenzufriedenheit.</p>
+
+      <p>Von der Werkstatt über die Lackiererei bis hin zum Chiptuning und der professionellen Fahrzeugaufbereitung – bei uns finden Sie alle Leistungen unter einem Dach. Wir arbeiten mit allen Versicherungen zusammen und betreuen alle Fahrzeugmarken.</p>
+    </div>
+
+    <div class="about-text">
+      <h2>Unsere Philosophie</h2>
+      <p><strong>Qualität vor Quantität:</strong> Wir nehmen uns Zeit für Ihr Fahrzeug und arbeiten nach den höchsten Standards.</p>
+
+      <p><strong>Ehrliche Beratung:</strong> Transparente Kostenvoranschläge ohne versteckte Kosten – Sie wissen immer, wofür Sie bezahlen.</p>
+
+      <p><strong>Kundennähe:</strong> Ihre Zufriedenheit steht bei uns an erster Stelle. Wir beraten Sie individuell und finden die beste Lösung für Ihr Anliegen.</p>
+
+      <p><strong>Moderne Ausstattung:</strong> Unsere Werkstatt ist mit modernster Diagnosetechnik ausgestattet, um auch komplexe Reparaturen schnell und zuverlässig durchzuführen.</p>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1632823469724-b32a4f6d9b0c?auto=format&fit=crop&w=800&q=80" alt="Werkstatt Innenansicht">
+    <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=800&q=80" alt="Professionelle Fahrzeugpflege">
+    <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=800&q=80" alt="Moderne Werkstattausrüstung">
+  </div>
+
+  <div class="map-container">
+    <h3>So finden Sie uns</h3>
+    <!-- Google Maps Embed für Autoservice H. Petrov in Gelnhausen -->
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.896!2d9.1847!3d50.2016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0f6c0f6c0f6d%3A0x1234567890abcdef!2sGelnhausen!5e0!3m2!1sde!2sde!4v1234567890" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <p style="margin-top:1rem; text-align:center; color:#666;">
+      <strong>Adresse:</strong> Autoservice H. Petrov, Gelnhausen
+    </p>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="team-content">
+    <h2>Unser Team</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <h3>H. Petrov</h3>
+        <p><strong>Geschäftsführer & Kfz-Meister</strong></p>
+        <p>Mit über 20 Jahren Erfahrung in der Branche leitet Herr Petrov das Unternehmen mit Expertise und Leidenschaft.</p>
+      </div>
+      <div class="team-member">
+        <h3>Unser Werkstatt-Team</h3>
+        <p><strong>Qualifizierte Kfz-Mechatroniker</strong></p>
+        <p>Unser engagiertes Team kümmert sich professionell um alle Reparaturen und Wartungsarbeiten an Ihrem Fahrzeug.</p>
+      </div>
+      <div class="team-member">
+        <h3>Lackier-Spezialisten</h3>
+        <p><strong>Meister der Farbe</strong></p>
+        <p>Von der Unfallreparatur bis zur Komplett-Lackierung – unsere Profis lassen Ihr Auto wieder strahlen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Autoservice H. Petrov – Ihr KFZ-Service in Gelnhausen</p>
+  <p>
+    <a href="impressum.html">Impressum</a> | 
+    <a href="datenschutz.html">Datenschutz</a> | 
+    <a href="kontakt.html">Kontakt</a>
+  </p>
+</footer>
+
+</body>
+</html>

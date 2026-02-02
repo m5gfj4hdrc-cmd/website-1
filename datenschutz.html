@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung – Autoservice H. Petrov</title>
+
+  <style>
+    :root {
+      --dark:#1f1f1f;
+      --light:#ffffff;
+      --accent:#c62828;
+      --gray:#f5f5f5;
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial, Helvetica, sans-serif; line-height:1.6; }
+
+    a { text-decoration:none; color:inherit; }
+
+    header {
+      background:var(--dark);
+      color:#fff;
+      padding:1rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size:1.3rem;
+      font-weight:bold;
+      display:flex;
+      align-items:center;
+      gap:0.8rem;
+      cursor:pointer;
+      transition:opacity 0.2s;
+    }
+
+    .logo:hover {
+      opacity:0.8;
+    }
+
+    .logo img {
+      height:50px;
+      width:auto;
+    }
+
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:1.5rem;
+    }
+
+    nav li { position:relative; }
+
+    nav a { 
+      color:#fff; 
+      font-weight:500;
+      transition:color 0.2s;
+      cursor:pointer;
+    }
+
+    nav a:hover {
+      color:var(--accent);
+    }
+
+    nav li ul {
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      background:#333;
+      min-width:220px;
+      border-radius:4px;
+      box-shadow:0 4px 6px rgba(0,0,0,0.3);
+      padding:0.5rem 0;
+      z-index:100;
+    }
+
+    nav li:hover > ul { 
+      display:block; 
+    }
+
+    nav li ul li {
+      display:block;
+    }
+
+    nav li ul li a {
+      display:block;
+      padding:0.7rem 1rem;
+      white-space:nowrap;
+    }
+
+    nav li ul li a:hover {
+      background:#444;
+      color:var(--accent);
+    }
+
+    .page-header {
+      background:var(--dark);
+      color:#fff;
+      padding:3rem 2rem;
+      text-align:center;
+    }
+
+    .page-header h1 {
+      font-size:2.5rem;
+    }
+
+    section {
+      max-width:900px;
+      margin:auto;
+      padding:3rem 2rem;
+    }
+
+    section h2 {
+      margin:2rem 0 1rem;
+      font-size:1.5rem;
+      color:var(--accent);
+    }
+
+    section h3 {
+      margin:1.5rem 0 0.5rem;
+      font-size:1.2rem;
+      color:var(--dark);
+    }
+
+    section p {
+      margin-bottom:1rem;
+      line-height:1.8;
+    }
+
+    section ul {
+      margin:1rem 0 1rem 2rem;
+      line-height:1.8;
+    }
+
+    section a {
+      color:var(--accent);
+      text-decoration:underline;
+    }
+
+    section a:hover {
+      color:#a02020;
+    }
+
+    footer {
+      background:#1f1f1f;
+      color:#fff;
+      text-align:center;
+      padding:2rem;
+      margin-top:3rem;
+    }
+
+    footer a {
+      color:#fff;
+      margin:0 0.5rem;
+    }
+
+    footer a:hover {
+      color:var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction:column;
+        gap:1rem;
+      }
+
+      nav ul {
+        flex-direction:column;
+        gap:0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="logoautoservice.png" alt="Autoservice H. Petrov Logo">
+    <span>Autoservice H. Petrov</span>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="index.html">Startseite</a></li>
+
+      <li>
+        <a href="#">Leistungen</a>
+        <ul>
+          <li><a href="werkstatt.html">Werkstatt</a></li>
+          <li><a href="tuning.html">Tuning</a></li>
+          <li><a href="lackierung.html">Lackiererei</a></li>
+          <li><a href="aufbereitung.html">Fahrzeugaufbereitung</a></li>
+        </ul>
+      </li>
+
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-header">
+  <h1>Datenschutzerklärung</h1>
+</section>
+
+<section>
+  <h2>1. Datenschutz auf einen Blick</h2>
+  
+  <h3>Allgemeine Hinweise</h3>
+  <p>
+    Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten 
+    passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie 
+    persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen 
+    Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.
+  </p>
+
+  <h3>Datenerfassung auf dieser Website</h3>
+  <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong></p>
+  <p>
+    Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten 
+    können Sie dem Impressum dieser Website entnehmen.
+  </p>
+
+  <p><strong>Wie erfassen wir Ihre Daten?</strong></p>
+  <p>
+    Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich 
+    z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.
+  </p>
+  <p>
+    Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere 
+    IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder 
+    Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.
+  </p>
+
+  <p><strong>Wofür nutzen wir Ihre Daten?</strong></p>
+  <p>
+    Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. 
+    Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
+  </p>
+
+  <p><strong>Welche Rechte haben Sie bezüglich Ihrer Daten?</strong></p>
+  <p>
+    Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer 
+    gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung 
+    oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt 
+    haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das 
+    Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten 
+    zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
+  </p>
+
+  <h2>2. Hosting</h2>
+  <p>
+    Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
+  </p>
+  <p>
+    <strong>[Name Ihres Hosting-Anbieters]</strong><br>
+    [Adresse des Hosting-Anbieters]
+  </p>
+
+  <h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
+  
+  <h3>Datenschutz</h3>
+  <p>
+    Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln 
+    Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften 
+    sowie dieser Datenschutzerklärung.
+  </p>
+  <p>
+    Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene 
+    Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende 
+    Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert 
+    auch, wie und zu welchem Zweck das geschieht.
+  </p>
+
+  <h3>Hinweis zur verantwortlichen Stelle</h3>
+  <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+  <p>
+    <strong>Autoservice H. Petrov</strong><br>
+    [Ihre Straße und Hausnummer]<br>
+    63571 Gelnhausen<br>
+    Deutschland
+  </p>
+  <p>
+    Telefon: [Ihre Telefonnummer]<br>
+    E-Mail: <a href="mailto:info@autoservice-petrov.de">info@autoservice-petrov.de</a>
+  </p>
+  <p>
+    Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit 
+    anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, 
+    E-Mail-Adressen o. Ä.) entscheidet.
+  </p>
+
+  <h3>Speicherdauer</h3>
+  <p>
+    Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben 
+    Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein 
+    berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, 
+    werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung 
+    Ihrer personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im 
+    letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.
+  </p>
+
+  <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
+  <p>
+    Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können 
+    eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf 
+    erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
+  </p>
+
+  <h3>Beschwerderecht bei der zuständigen Aufsichtsbehörde</h3>
+  <p>
+    Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer 
+    Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres 
+    Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht besteht unbeschadet 
+    anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.
+  </p>
+
+  <h2>4. Datenerfassung auf dieser Website</h2>
+
+  <h3>Kontaktformular</h3>
+  <p>
+    Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular 
+    inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall 
+    von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+  </p>
+
+  <h3>Anfrage per E-Mail, Telefon oder Telefax</h3>
+  <p>
+    Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus 
+    hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei 
+    uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+  </p>
+
+  <h2>5. Plugins und Tools</h2>
+
+  <h3>Google Maps</h3>
+  <p>
+    Diese Seite nutzt den Kartendienst Google Maps. Anbieter ist die Google Ireland Limited („Google"), 
+    Gordon House, Barrow Street, Dublin 4, Irland.
+  </p>
+  <p>
+    Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre IP-Adresse zu speichern. Diese 
+    Informationen werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. 
+    Der Anbieter dieser Seite hat keinen Einfluss auf diese Datenübertragung.
+  </p>
+  <p>
+    Die Nutzung von Google Maps erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote 
+    und an einer leichten Auffindbarkeit der von uns auf der Website angegebenen Orte. Dies stellt ein 
+    berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.
+  </p>
+  <p>
+    Mehr Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google: 
+    <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.
+  </p>
+
+  <p style="margin-top:2rem; padding-top:2rem; border-top:1px solid #ddd; font-size:0.9rem; color:#666;">
+    <strong>Hinweis:</strong> Diese Datenschutzerklärung ist eine Basisversion. Bitte ergänzen Sie diese um 
+    weitere Punkte, die für Ihre Website relevant sind (z.B. Cookies, Analytics, Social Media etc.) und 
+    ersetzen Sie die Platzhalter durch Ihre tatsächlichen Daten. Für eine rechtssichere Datenschutzerklärung 
+    empfehlen wir die Konsultation eines Rechtsanwalts.
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 Autoservice H. Petrov – Ihr KFZ-Service in Gelnhausen</p>
+  <p>
+    <a href="impressum.html">Impressum</a> | 
+    <a href="datenschutz.html">Datenschutz</a> | 
+    <a href="kontakt.html">Kontakt</a>
+  </p>
+</footer>
+
+</body>
+</html>
