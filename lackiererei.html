@@ -1,257 +1,287 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lackiererei & Unfallinstandsetzung – Autoservice H. Petrov</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lackiererei – Autoservice H. Petrov</title>
 
-<style>
-body{font-family:Arial;margin:0;line-height:1.6}
-header,footer{background:#1f1f1f;color:#fff;padding:1rem 2rem}
-section{max-width:1000px;margin:auto;padding:3rem 2rem}
-.hero-box{background:linear-gradient(135deg, #c62828 0%, #8e0000 100%);color:#fff;padding:2.5rem;border-radius:8px;margin:2rem 0}
-.hero-box h2{margin-bottom:0.5rem}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin:3rem 0}
-.service-card{background:#f5f5f5;padding:2rem;border-radius:8px;border-left:4px solid #c62828}
-.service-card h3{color:#c62828;margin-bottom:1rem}
-.service-card ul{margin:1rem 0;padding-left:1.2rem}
-.process-timeline{margin:3rem 0}
-.timeline-item{display:flex;gap:1.5rem;margin:2rem 0;padding:1.5rem;background:#f9f9f9;border-radius:6px}
-.timeline-number{background:#c62828;color:#fff;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0}
-.timeline-content h4{margin-top:0;color:#c62828}
-.info-box{background:#e8f5e9;border-left:4px solid #4caf50;padding:1.5rem;margin:2rem 0}
-.warning-box{background:#fff3cd;border-left:4px solid #ffc107;padding:1.5rem;margin:2rem 0}
-a.btn{background:#c62828;color:#fff;padding:0.9rem 1.8rem;border-radius:4px;display:inline-block;margin-top:1rem;transition:0.2s}
-a.btn:hover{background:#a02020}
-.feature-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:2rem 0}
-.feature-item{display:flex;align-items:start;gap:0.8rem;padding:1rem;background:#fff;border-radius:6px}
-.feature-icon{color:#c62828;font-size:1.5rem;flex-shrink:0}
-h3{color:#c62828;margin-top:2.5rem}
-</style>
+  <style>
+    :root {
+      --dark:#1f1f1f;
+      --light:#ffffff;
+      --accent:#c62828;
+      --gray:#f5f5f5;
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial, Helvetica, sans-serif; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+
+    header {
+      background:var(--dark);
+      color:#fff;
+      padding:1rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size:1.3rem;
+      font-weight:bold;
+      display:flex;
+      align-items:center;
+      gap:0.8rem;
+    }
+
+    .logo img {
+      height:50px;
+    }
+
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:1.5rem;
+    }
+
+    nav > ul > li { position:relative; }
+
+    nav a {
+      color:#fff;
+      font-weight:500;
+    }
+
+    nav a:hover { color:var(--accent); }
+
+    nav > ul > li > ul {
+      display:none;
+      position:absolute;
+      top:calc(100% + 0.5rem);
+      left:0;
+      background:#333;
+      min-width:220px;
+      border-radius:4px;
+      box-shadow:0 8px 16px rgba(0,0,0,0.4);
+      padding:0.5rem 0;
+    }
+
+    nav > ul > li:hover > ul { display:block; }
+
+    nav > ul > li > ul a {
+      padding:0.8rem 1.2rem;
+      display:block;
+      color:#fff;
+    }
+
+    nav > ul > li > ul a:hover {
+      background:#444;
+      color:var(--accent);
+    }
+
+    .page-header {
+      background:
+        linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80');
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+      padding:5rem 2rem;
+      text-align:center;
+    }
+
+    .page-header h1 {
+      font-size:2.5rem;
+      margin-bottom:1rem;
+    }
+
+    section {
+      max-width:1100px;
+      margin:auto;
+      padding:4rem 2rem;
+    }
+
+    h2 {
+      text-align:center;
+      margin-bottom:2rem;
+      color:var(--dark);
+    }
+
+    h3 { color:var(--accent); }
+
+    .services-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:2rem;
+      margin:3rem 0;
+    }
+
+    .service-card {
+      background:var(--gray);
+      padding:2rem;
+      border-radius:8px;
+      border-left:4px solid var(--accent);
+    }
+
+    .service-card ul {
+      list-style:none;
+      margin-top:1rem;
+    }
+
+    .service-card ul li {
+      padding-left:1.5rem;
+      position:relative;
+      margin:0.5rem 0;
+    }
+
+    .service-card ul li:before {
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:var(--accent);
+    }
+
+    .info-section {
+      background:var(--gray);
+      padding:3rem;
+      border-radius:8px;
+      margin:3rem 0;
+    }
+
+    .cta-box {
+      background:var(--dark);
+      color:#fff;
+      padding:3rem;
+      border-radius:8px;
+      text-align:center;
+    }
+
+    .btn {
+      background:var(--accent);
+      color:#fff;
+      padding:0.9rem 1.8rem;
+      border-radius:4px;
+      display:inline-block;
+      margin-top:1rem;
+    }
+
+    .btn:hover { background:#a02020; }
+
+    footer {
+      background:#1f1f1f;
+      color:#fff;
+      text-align:center;
+      padding:2rem;
+      margin-top:3rem;
+    }
+
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width:768px) {
+      header {
+        flex-direction:column;
+        gap:1rem;
+      }
+      nav ul {
+        flex-direction:column;
+        gap:0.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
+
 <header>
-  <a href="index.html" style="color:#fff">← Zurück zur Startseite</a>
+  <a href="index.html" class="logo">
+    <img src="logoautoservice.png" alt="Autoservice H. Petrov">
+    <span>Autoservice H. Petrov</span>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="index.html">Startseite</a></li>
+      <li>
+        <a href="#">Leistungen</a>
+        <ul>
+          <li><a href="werkstatt.html">Werkstatt</a></li>
+          <li><a href="tuning.html">Tuning</a></li>
+          <li><a href="lackiererei.html">Lackiererei</a></li>
+          <li><a href="aufbereitung.html">Fahrzeugaufbereitung</a></li>
+        </ul>
+      </li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
 </header>
 
+<section class="page-header">
+  <h1>Lackiererei & Unfallinstandsetzung</h1>
+  <p>Professionelle Lackarbeiten und komplette Unfallabwicklung aus einer Hand</p>
+</section>
+
 <section>
-<h1>Lackiererei & Unfallinstandsetzung</h1>
-<p>Von kleinen Lackschäden bis zur kompletten Unfallreparatur – unsere moderne Lackiererei macht Ihr Fahrzeug wieder wie neu.</p>
+  <h2>Unsere Leistungen</h2>
 
-<div class="hero-box">
-  <h2>🔧 Professionelle Unfallreparatur & Lackierung</h2>
-  <p>Eigene Lackiererei mit modernster Lackierkabine. Wir arbeiten für alle Versicherungen und bieten kompletten Service von der Schadenaufnahme bis zur Fahrzeugrückgabe.</p>
-</div>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Unfallinstandsetzung</h3>
+      <ul>
+        <li>Karosserie- & Richtarbeiten</li>
+        <li>Austausch beschädigter Teile</li>
+        <li>Zusammenarbeit mit allen Versicherungen</li>
+        <li>Komplette Schadensabwicklung</li>
+      </ul>
+    </div>
 
-<h2 style="text-align:center">Unsere Leistungen</h2>
-<div class="services-grid">
-  <div class="service-card">
-    <h3>Unfallinstandsetzung</h3>
-    <ul>
-      <li>Karosseriearbeiten aller Art</li>
-      <li>Blecharbeiten & Richtarbeiten</li>
-      <li>Austausch beschädigter Teile</li>
-      <li>Fahrwerkvermessung nach Unfall</li>
-      <li>Komplettinstandsetzung</li>
-      <li>Arbeiten mit allen Versicherungen</li>
-    </ul>
-  </div>
+    <div class="service-card">
+      <h3>Lackierarbeiten</h3>
+      <ul>
+        <li>Spot- & Smart-Repair</li>
+        <li>Teil- & Komplettlackierungen</li>
+        <li>Originalfarbton-Garantie</li>
+        <li>Unterbodenschutz</li>
+      </ul>
+    </div>
 
-  <div class="service-card">
-    <h3>Lackierarbeiten</h3>
-    <ul>
-      <li>Spot-Repair (kleine Lackschäden)</li>
-      <li>Teil- und Komplett-Lackierungen</li>
-      <li>Smart-Repair bei Kleinschäden</li>
-      <li>Lackierung in Originalfarbe</li>
-      <li>Folierung & Beschriftung</li>
-      <li>Unterbodenschutz & Hohlraumversiegelung</li>
-    </ul>
-  </div>
-
-  <div class="service-card">
-    <h3>Schadensmanagement</h3>
-    <ul>
-      <li>Kostenvoranschlag für Versicherung</li>
-      <li>Schadengutachten-Koordination</li>
-      <li>Direktabrechnung mit Versicherung</li>
-      <li>Ersatzfahrzeug-Organisation</li>
-      <li>Abschleppdienst-Koordination</li>
-      <li>Komplette Abwicklung für Sie</li>
-    </ul>
-  </div>
-
-  <div class="service-card">
-    <h3>Spezialarbeiten</h3>
-    <ul>
-      <li>Dellen- & Hagel-Reparatur (PDR)</li>
-      <li>Kunststoff-Schweißen (Stoßfänger)</li>
-      <li>Rostentfernung & Behandlung</li>
-      <li>Steinschlag-Reparatur</li>
-      <li>Kratzer-Beseitigung</li>
-      <li>Scheiben-Austausch</li>
-    </ul>
-  </div>
-</div>
-
-<h2>Unfallabwicklung – So einfach geht's</h2>
-<div class="process-timeline">
-  <div class="timeline-item">
-    <div class="timeline-number">1</div>
-    <div class="timeline-content">
-      <h4>Schadenmeldung</h4>
-      <p>Kontaktieren Sie uns telefonisch oder kommen Sie direkt vorbei. Bei Bedarf organisieren wir die Abholung Ihres Fahrzeugs.</p>
+    <div class="service-card">
+      <h3>Spezialarbeiten</h3>
+      <ul>
+        <li>Dellen- & Hagelschaden-Reparatur</li>
+        <li>Rostentfernung</li>
+        <li>Kunststoffschweißen</li>
+        <li>Steinschlagreparatur</li>
+      </ul>
     </div>
   </div>
 
-  <div class="timeline-item">
-    <div class="timeline-number">2</div>
-    <div class="timeline-content">
-      <h4>Schadenaufnahme & Gutachten</h4>
-      <p>Wir dokumentieren den Schaden, erstellen einen Kostenvoranschlag und koordinieren bei Bedarf einen Gutachter.</p>
-    </div>
+  <div class="info-section">
+    <h3>Warum unsere Lackiererei?</h3>
+    <p>✔ Moderne Lackierkabine & Farbmischanlage</p>
+    <p>✔ Über 15 Jahre Erfahrung</p>
+    <p>✔ Schnelle Reparaturzeiten</p>
+    <p>✔ Garantie auf alle Arbeiten</p>
   </div>
 
-  <div class="timeline-item">
-    <div class="timeline-number">3</div>
-    <div class="timeline-content">
-      <h4>Versicherungsabstimmung</h4>
-      <p>Wir klären alles mit Ihrer Versicherung. Optional: Direktabrechnung, sodass Sie sich um nichts kümmern müssen.</p>
-    </div>
+  <div class="cta-box">
+    <h3>Unfall oder Lackschaden?</h3>
+    <p>Wir kümmern uns um alles – von der Schadenmeldung bis zur Fahrzeugübergabe.</p>
+    <a href="kontakt.html" class="btn">Jetzt Termin vereinbaren</a>
   </div>
-
-  <div class="timeline-item">
-    <div class="timeline-number">4</div>
-    <div class="timeline-content">
-      <h4>Reparatur</h4>
-      <p>Professionelle Instandsetzung durch unser erfahrenes Team. Sie erhalten regelmäßig Updates zum Reparaturstand.</p>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-number">5</div>
-    <div class="timeline-content">
-      <h4>Qualitätskontrolle & Übergabe</h4>
-      <p>Nach Abschluss der Arbeiten prüfen wir alles gründlich. Dann holen Sie Ihr Fahrzeug ab – wie neu!</p>
-    </div>
-  </div>
-</div>
-
-<h2>Unsere Ausstattung</h2>
-<div class="feature-list">
-  <div class="feature-item">
-    <div class="feature-icon">🎨</div>
-    <div>
-      <strong>Moderne Lackierkabine</strong>
-      <p>Mit Belüftungssystem und optimaler Temperaturregelung</p>
-    </div>
-  </div>
-
-  <div class="feature-item">
-    <div class="feature-icon">🔬</div>
-    <div>
-      <strong>Farbmischanlage</strong>
-      <p>Exakte Farbanpassung durch computergestützte Farbmischung</p>
-    </div>
-  </div>
-
-  <div class="feature-item">
-    <div class="feature-icon">⚙️</div>
-    <div>
-      <strong>Richtbank</strong>
-      <p>Für präzise Karosseriearbeiten und Rahmenbegradigung</p>
-    </div>
-  </div>
-
-  <div class="feature-item">
-    <div class="feature-icon">🔧</div>
-    <div>
-      <strong>Spezialwerkzeug</strong>
-      <p>Für alle gängigen Fahrzeugmarken und Reparaturverfahren</p>
-    </div>
-  </div>
-
-  <div class="feature-item">
-    <div class="feature-icon">💻</div>
-    <div>
-      <strong>Diagnose-Equipment</strong>
-      <p>Moderne Fahrzeugdiagnose für elektronische Systeme</p>
-    </div>
-  </div>
-
-  <div class="feature-item">
-    <div class="feature-icon">📐</div>
-    <div>
-      <strong>Vermessungstechnik</strong>
-      <p>Präzise Fahrwerkvermessung nach Unfallreparatur</p>
-    </div>
-  </div>
-</div>
-
-<h2>Kleine Schäden – Smart Repair</h2>
-<div class="info-box">
-  <h4 style="margin-top:0">Schnell & günstig für kleine Lackschäden</h4>
-  <p>Nicht jeder Kratzer oder jede Delle erfordert eine aufwendige Reparatur. Mit Smart-Repair-Verfahren können wir kleine Schäden kostengünstig und oft innerhalb weniger Stunden beheben:</p>
-  <ul style="margin-top:1rem">
-    <li><strong>Spot-Repair:</strong> Punktuelle Lackierung kleiner Flächen (ab 80€)</li>
-    <li><strong>Dellen-Drücken (PDR):</strong> Ausbeulen ohne Lackierung (ab 60€)</li>
-    <li><strong>Kunststoffreparatur:</strong> Schweißen von Stoßfängern (ab 90€)</li>
-    <li><strong>Kratzer polieren:</strong> Entfernung oberflächlicher Kratzer (ab 40€)</li>
-  </ul>
-</div>
-
-<h2>Versicherungs-Service</h2>
-<p>Wir arbeiten mit allen Versicherungen zusammen und bieten Ihnen umfassenden Service:</p>
-<ul style="line-height:2">
-  <li>✓ Kostenvoranschlag für Versicherung erstellen</li>
-  <li>✓ Direktabrechnung mit Ihrer Versicherung (bei Vollkasko)</li>
-  <li>✓ Koordination mit Gutachtern</li>
-  <li>✓ Organisation von Ersatzfahrzeugen</li>
-  <li>✓ Abwicklung des gesamten Papierkrams</li>
-  <li>✓ Beratung bei Schadenregulierung</li>
-</ul>
-
-<div class="warning-box">
-  <strong>💡 Wichtig nach einem Unfall:</strong>
-  <ul style="margin-top:1rem">
-    <li>Dokumentieren Sie den Schaden mit Fotos</li>
-    <li>Tauschen Sie Daten mit dem Unfallgegner aus</li>
-    <li>Melden Sie den Schaden Ihrer Versicherung</li>
-    <li>Bei Vollkasko: Holen Sie mehrere Angebote ein (freie Werkstattwahl!)</li>
-    <li>Bei Teilkasko/Haftpflicht: Wir rechnen direkt mit der Versicherung ab</li>
-  </ul>
-  <p style="margin-top:1rem">Wir beraten Sie gerne zu allen Fragen rund um die Schadenabwicklung!</p>
-</div>
-
-<h2>Warum Lackiererei bei uns?</h2>
-<ul style="line-height:2">
-  <li>🎯 Über 15 Jahre Erfahrung in Lackierung und Karosseriebau</li>
-  <li>🏆 Qualität wie vom Markenbetrieb – zu fairen Preisen</li>
-  <li>⚡ Schnelle Bearbeitung – kurze Standzeiten</li>
-  <li>🚗 Ersatzfahrzeug nach Verfügbarkeit</li>
-  <li>💰 Transparente Kostenvoranschläge</li>
-  <li>✓ Garantie auf alle Lackier- und Karosseriearbeiten</li>
-  <li>📞 Persönlicher Ansprechpartner während der gesamten Reparatur</li>
-</ul>
-
-<h2>Häufige Fragen</h2>
-<div class="info-box">
-  <p><strong>Wie lange dauert eine Unfallreparatur?</strong><br>
-  Das hängt vom Schadensumfang ab. Kleinere Schäden können wir oft in 2-3 Tagen erledigen. Bei größeren Unfallschäden planen Sie bitte 1-2 Wochen ein. Wir informieren Sie vorab über die voraussichtliche Reparaturdauer.</p>
-  
-  <p style="margin-top:1rem"><strong>Bekomme ich ein Ersatzfahrzeug?</strong><br>
-  Wenn die Versicherung ein Ersatzfahrzeug übernimmt (bei unverschuldeten Unfällen), organisieren wir das gerne für Sie. Bei Versicherungsfällen mit Selbstverschulden können Sie gegen Aufpreis ein Fahrzeug bei uns mieten.</p>
-  
-  <p style="margin-top:1rem"><strong>Kann ich meine Werkstatt frei wählen?</strong><br>
-  Ja! Bei Vollkasko und als Geschädigter haben Sie freie Werkstattwahl. Die Versicherung kann keine bestimmte Werkstatt vorschreiben.</p>
-</div>
-
-<a href="kontakt.html" class="btn">Jetzt Termin vereinbaren oder Schaden melden</a>
 </section>
 
 <footer>
-  <p>© 2026 Autoservice H. Petrov | <a href="index.html" style="color:#fff">Startseite</a></p>
+  <p>© 2026 Autoservice H. Petrov – Ihr KFZ-Service in Gelnhausen</p>
+  <p>
+    <a href="impressum.html">Impressum</a> |
+    <a href="datenschutz.html">Datenschutz</a> |
+    <a href="kontakt.html">Kontakt</a>
+  </p>
 </footer>
+
 </body>
 </html>
+
