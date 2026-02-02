@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Werkstatt – Autoservice H. Petrov</title>
+
+  <style>
+    :root {
+      --dark:#1f1f1f;
+      --light:#ffffff;
+      --accent:#c62828;
+      --gray:#f5f5f5;
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial, Helvetica, sans-serif; line-height:1.6; }
+
+    a { text-decoration:none; color:inherit; }
+
+    header {
+      background:var(--dark);
+      color:#fff;
+      padding:1rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size:1.3rem;
+      font-weight:bold;
+      display:flex;
+      align-items:center;
+      gap:0.8rem;
+      cursor:pointer;
+      transition:opacity 0.2s;
+    }
+
+    .logo:hover {
+      opacity:0.8;
+    }
+
+    .logo img {
+      height:50px;
+      width:auto;
+    }
+
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:1.5rem;
+    }
+
+    nav > ul > li { 
+      position:relative;
+    }
+
+    nav a { 
+      color:#fff; 
+      font-weight:500;
+      transition:color 0.2s;
+      cursor:pointer;
+      display:block;
+    }
+
+    nav a:hover {
+      color:var(--accent);
+    }
+
+    /* Dropdown-Menü */
+    nav > ul > li > ul {
+      display:none;
+      position:absolute;
+      top:calc(100% + 0.5rem);
+      left:0;
+      background:#333;
+      min-width:240px;
+      border-radius:4px;
+      box-shadow:0 8px 16px rgba(0,0,0,0.4);
+      padding:0.5rem 0;
+      z-index:1000;
+      margin:0;
+    }
+
+    nav > ul > li:hover > ul { 
+      display:block; 
+    }
+
+    nav > ul > li > ul > li {
+      display:block;
+      margin:0;
+    }
+
+    nav > ul > li > ul > li > a {
+      display:block;
+      padding:0.8rem 1.2rem;
+      white-space:nowrap;
+      color:#fff;
+    }
+
+    nav > ul > li > ul > li > a:hover {
+      background:#444;
+      color:var(--accent);
+    }
+
+    .page-header {
+      background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+      url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=80');
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+      padding:5rem 2rem;
+      text-align:center;
+    }
+
+    .page-header h1 {
+      font-size:2.5rem;
+      margin-bottom:1rem;
+    }
+
+    section {
+      max-width:1100px;
+      margin:auto;
+      padding:4rem 2rem;
+    }
+
+    section h2 {
+      margin-bottom:2rem;
+      font-size:2rem;
+      color:var(--dark);
+      text-align:center;
+    }
+
+    section h3 {
+      margin:2rem 0 1rem;
+      font-size:1.5rem;
+      color:var(--accent);
+    }
+
+    section p {
+      margin-bottom:1rem;
+      line-height:1.8;
+    }
+
+    .services-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:2rem;
+      margin:3rem 0;
+    }
+
+    .service-card {
+      background:var(--gray);
+      padding:2rem;
+      border-radius:8px;
+      border-left:4px solid var(--accent);
+      transition:transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform:translateY(-5px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .service-card h3 {
+      color:var(--accent);
+      margin:0 0 1rem;
+      font-size:1.3rem;
+    }
+
+    .service-card ul {
+      list-style:none;
+      padding:0;
+    }
+
+    .service-card ul li {
+      padding:0.5rem 0;
+      padding-left:1.5rem;
+      position:relative;
+    }
+
+    .service-card ul li:before {
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:var(--accent);
+      font-weight:bold;
+    }
+
+    .cta-box {
+      background:var(--dark);
+      color:#fff;
+      padding:3rem;
+      border-radius:8px;
+      text-align:center;
+      margin:3rem 0;
+    }
+
+    .cta-box h3 {
+      color:#fff;
+      margin-bottom:1rem;
+    }
+
+    .btn {
+      background:var(--accent);
+      color:#fff;
+      padding:0.9rem 1.8rem;
+      border-radius:4px;
+      font-weight:bold;
+      display:inline-block;
+      margin-top:1rem;
+      transition:background 0.2s;
+      cursor:pointer;
+    }
+
+    .btn:hover {
+      background:#a02020;
+    }
+
+    .info-section {
+      background:var(--gray);
+      padding:3rem 2rem;
+      border-radius:8px;
+      margin:3rem 0;
+    }
+
+    footer {
+      background:#1f1f1f;
+      color:#fff;
+      text-align:center;
+      padding:2rem;
+      margin-top:3rem;
+    }
+
+    footer a {
+      color:#fff;
+      margin:0 0.5rem;
+    }
+
+    footer a:hover {
+      color:var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns:1fr;
+      }
+
+      header {
+        flex-direction:column;
+        gap:1rem;
+      }
+
+      nav ul {
+        flex-direction:column;
+        gap:0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="logoautoservice.png" alt="Autoservice H. Petrov Logo">
+    <span>Autoservice H. Petrov</span>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="index.html">Startseite</a></li>
+
+      <li>
+        <a href="#">Leistungen</a>
+        <ul>
+          <li><a href="werkstatt.html">Werkstatt</a></li>
+          <li><a href="tuning.html">Tuning</a></li>
+          <li><a href="lackierung.html">Lackiererei</a></li>
+          <li><a href="aufbereitung.html">Fahrzeugaufbereitung</a></li>
+        </ul>
+      </li>
+
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-header">
+  <h1>KFZ-Werkstatt</h1>
+  <p>Professionelle Wartung und Reparatur für alle Fahrzeugmarken</p>
+</section>
+
+<section>
+  <h2>Unsere Werkstatt-Leistungen</h2>
+  <p style="text-align:center; max-width:800px; margin:0 auto 3rem;">
+    In unserer modernen KFZ-Werkstatt in Gelnhausen bieten wir Ihnen den kompletten Service rund um Ihr Fahrzeug. 
+    Von der regelmäßigen Inspektion über Reparaturen bis hin zur Hauptuntersuchung – bei uns sind Sie in besten Händen.
+  </p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Inspektion & Wartung</h3>
+      <p>Regelmäßige Wartung nach Herstellervorgaben für maximale Sicherheit und Werterhalt.</p>
+      <ul>
+        <li>Inspektion nach Herstellervorgabe</li>
+        <li>Ölwechsel mit Qualitätsölen</li>
+        <li>Filterwechsel (Öl, Luft, Pollen, Kraftstoff)</li>
+        <li>Flüssigkeitsprüfung und -auffüllung</li>
+        <li>Sichtprüfung aller Komponenten</li>
+        <li>Service-Reset und Dokumentation</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>Bremsenservice</h3>
+      <p>Ihre Sicherheit steht an erster Stelle – professionelle Bremsenwartung und -reparatur.</p>
+      <ul>
+        <li>Bremsbelagwechsel vorne/hinten</li>
+        <li>Bremsscheibenwechsel</li>
+        <li>Bremsflüssigkeitswechsel</li>
+        <li>Bremsleitungen prüfen/erneuern</li>
+        <li>Handbremse einstellen</li>
+        <li>Bremskraftverstärker prüfen</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>Reifenservice</h3>
+      <p>Komplett-Service für Ihre Reifen – Verkauf, Montage, Wuchten und Einlagerung.</p>
+      <ul>
+        <li>Reifen-/Räderverkauf aller Marken</li>
+        <li>Reifenwechsel und Montage</li>
+        <li>Auswuchten und Ventilwechsel</li>
+        <li>RDKS-Programmierung</li>
+        <li>Reifen- und Felgeneinlagerung</li>
+        <li>Profiltiefenmessung</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>HU / AU</h3>
+      <p>Hauptuntersuchung und Abgasuntersuchung direkt bei uns – ohne extra Fahrt.</p>
+      <ul>
+        <li>TÜV-/DEKRA-Hauptuntersuchung</li>
+        <li>Abgasuntersuchung (AU)</li>
+        <li>HU-Vorbereitung</li>
+        <li>Mängelbehebung</li>
+        <li>Nachuntersuchung</li>
+        <li>Oldtimer-Gutachten (H-Kennzeichen)</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>Klimaanlagenservice</h3>
+      <p>Für angenehmes Klima in Ihrem Fahrzeug – Wartung, Befüllung und Desinfektion.</p>
+      <ul>
+        <li>Klimaanlagen-Wartung</li>
+        <li>Kältemittel-Befüllung</li>
+        <li>Klimaanlagen-Desinfektion</li>
+        <li>Pollenfilter-Wechsel</li>
+        <li>Dichtigkeitsprüfung</li>
+        <li>Kompressor-Prüfung</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>Motor & Getriebe</h3>
+      <p>Diagnose und Reparatur von Motor- und Getriebeschäden durch erfahrene Mechaniker.</p>
+      <ul>
+        <li>Motordiagnose mit modernster Technik</li>
+        <li>Zahnriemenwechsel</li>
+        <li>Kupplungswechsel</li>
+        <li>Getriebeinstandsetzung</li>
+        <li>Motorinstandsetzung</li>
+        <li>Steuerkettenwechsel</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>Elektrik & Elektronik</h3>
+      <p>Fehlerdiagnose und Reparatur aller elektrischen Systeme in Ihrem Fahrzeug.</p>
+      <ul>
+        <li>Fehlerdiagnose mit Diagnosegerät</li>
+        <li>Batterie prüfen/wechseln</li>
+        <li>Lichtmaschine/Starter reparieren</li>
+        <li>Beleuchtung einstellen/reparieren</li>
+        <li>Steuergeräte programmieren</li>
+        <li>Kabelbaum-Reparatur</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>Fahrwerk & Lenkung</h3>
+      <p>Perfektes Fahrverhalten durch professionelle Fahrwerks- und Lenkungswartung.</p>
+      <ul>
+        <li>Stoßdämpfer wechseln</li>
+        <li>Achsvermessung/Spureinstellung</li>
+        <li>Radlager wechseln</li>
+        <li>Spurstangenkopf erneuern</li>
+        <li>Querlenker wechseln</li>
+        <li>Stabilisator reparieren</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>Auspuffanlage</h3>
+      <p>Reparatur und Austausch von Auspuffanlagen für alle Fahrzeugtypen.</p>
+      <ul>
+        <li>Auspuff-Komplettanlage</li>
+        <li>Mittelschalldämpfer</li>
+        <li>Endschalldämpfer</li>
+        <li>Katalysator-Austausch</li>
+        <li>Partikelfilter-Reinigung</li>
+        <li>Krümmer-Reparatur</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h3>Warum unsere Werkstatt?</h3>
+    <p>
+      <strong>Modernste Ausstattung:</strong> Unsere Werkstatt ist mit neuester Diagnosetechnik und Spezialwerkzeugen 
+      ausgestattet, um auch komplexe Reparaturen durchführen zu können.
+    </p>
+    <p>
+      <strong>Qualifizierte Mechaniker:</strong> Unser Team besteht aus erfahrenen KFZ-Mechatronikern mit 
+      regelmäßigen Weiterbildungen zu neuesten Fahrzeugtechnologien.
+    </p>
+    <p>
+      <strong>Alle Marken:</strong> Wir reparieren und warten alle Fahrzeugmarken – vom Kleinwagen bis zum 
+      Premiumfahrzeug, von Benziner bis Diesel, auch Hybrid- und Elektrofahrzeuge.
+    </p>
+    <p>
+      <strong>Originalteile & Qualitätsersatzteile:</strong> Je nach Wunsch verwenden wir Originalteile oder 
+      hochwertige Ersatzteile namhafter Hersteller – immer transparent kommuniziert.
+    </p>
+    <p>
+      <strong>Garantie:</strong> Auf alle Reparaturen erhalten Sie selbstverständlich Garantie. Ihre Zufriedenheit 
+      ist unser Anspruch.
+    </p>
+  </div>
+
+  <div class="cta-box">
+    <h3>Termin vereinbaren</h3>
+    <p>Vereinbaren Sie noch heute einen Termin für Ihre Inspektion oder Reparatur!</p>
+    <a href="kontakt.html" class="btn">Jetzt Termin buchen</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Autoservice H. Petrov – Ihr KFZ-Service in Gelnhausen</p>
+  <p>
+    <a href="impressum.html">Impressum</a> | 
+    <a href="datenschutz.html">Datenschutz</a> | 
+    <a href="kontakt.html">Kontakt</a>
+  </p>
+</footer>
+
+</body>
+</html>
